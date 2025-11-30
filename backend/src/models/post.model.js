@@ -18,9 +18,9 @@ const postSchema = new mongoose.Schema(
       required: true,
       unique: true,
       trim: true,
-      lowercase:true,
+      lowercase: true,
     },
-    tags: [{ type: String , trim: true }],
+    tags: [{ type: String, trim: true }],
     status: {
       type: String,
       required: true,
@@ -45,6 +45,11 @@ const postSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
+    },
+    moderationStatus: {
+      type: String,
+      enum: ["pending", "approved", "rejected"],
+      default: "pending",
     },
   },
   { timestamps: true }
