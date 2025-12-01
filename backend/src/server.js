@@ -5,7 +5,8 @@ const authUserRoutes = require("./routes/auth.user.route");
 const authStaffRoutes = require("./routes/auth.staff.route");
 const postRoutes = require("./routes/post.route");
 const commentRoutes = require("./routes/comments.route");
-const commentRoutes = require("./routes/like.route");
+const likeRoutes = require("./routes/like.route");
+const reportRoutes = require("./routes/report.route");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -18,6 +19,7 @@ app.use("/api/auth/staff", authStaffRoutes);
 app.use("/api", postRoutes);
 app.use("/api", commentRoutes);
 app.use("/api", likeRoutes);
+app.use("/api", reportRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is up and running in http://localhost:${PORT}`);
